@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;     /* Для старых версий WebKit */
+    display: -ms-flexbox;    /* Для IE */
+    display: flex;           /* Современные браузеры */
+    -webkit-box-orient: horizontal; /* Для старых версий WebKit */
+    -webkit-box-direction: normal;  /* Для старых версий WebKit */
+    -ms-flex-direction: row;        /* Для IE */
+    flex-direction: row;            /* Современные браузеры */
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 100%;
+}
+
+.sidebar {
+    width: 30%;
+    min-width: 350px;
+    background: rgb(58, 65, 166);
+    color: rgb(233, 233, 235);
+}
+
+.content {
+    width: 70%;
+    min-width: 380px;
+    height: 100%;
+    color: rgb(58, 65, 166);
+    background: rgb(233, 233, 235);
+}
+
+.block {
+    margin-top: 25px;
+}
+
+.sidebar > .block {
+    width: 70%;
+    margin: 25px 15%;
+}
+
+.sidebar > .block:first-child {
+    margin: 3vw 15% 40px;
+}
+
+.content > .block {
+    width: 90%;
+    margin: 25px 5%;
+    border-bottom: rgb(58, 65, 166) solid 4px;
+}
+
+.content > .block:first-child {
+    margin: 3vw 5% 40px;
+}
+
+.timeline {
+    border-left: rgb(58, 65, 166) solid 3px;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+
+.timeline > li {
+    list-style-type: none;
+    margin: 25px 0;
+}
+
+@media (max-width: 730px) {
+    body {
+        -webkit-box-orient: vertical;  /* Для старых версий WebKit */
+        -webkit-box-direction: normal; /* Для старых версий WebKit */
+        -ms-flex-direction: column;    /* Для IE */
+        flex-direction: column;        /* Современные браузеры */
+    }
+
+    .avatar {
+        max-width: 300px;
+    }
+
+    .sidebar {
+        -ms-flex-order: 2; /* Для IE */
+        order: 2;          /* Современные браузеры */
+    }
+
+    .content {
+        -ms-flex-order: 1; /* Для IE */
+        order: 1;          /* Современные браузеры */
+    }
+
+    .sidebar, .content {
+        width: 100%;
+        min-width: auto;
+    }
+}
